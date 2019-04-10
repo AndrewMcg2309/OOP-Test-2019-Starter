@@ -1,8 +1,6 @@
 package ie.tudublin;
 
-import java.util.ArrayList;
-import processing.core.PApplet;
-import processing.data.Table;
+
 import processing.data.TableRow;
 
 public class Resistor
@@ -12,12 +10,24 @@ public class Resistor
     public int tens;
     public int hundreds;
 
-    Resistor(TableRow row1)
+    Resistor(TableRow rows)
     {
-        value = row1.getInt("value");
-        ones = row1.getInt("ones");
-        tens = row1.getInt("tens");
-        hundreds = row1.getInt("hundreds");
+        value = rows.getInt(0);
+        //ones = rows.getInt(1);
+        //tens = row1.getInt(2);
+        //hundreds = row1.getInt(3);
     }
 
+    public Resistor(int value, int ones, int tens, int hundreds)
+    {
+        this.value = value;
+        this.ones = ones;
+        this.tens = tens;
+        this.hundreds = hundreds;
+    }
+
+    public void render()
+    {
+        
+    }
 }

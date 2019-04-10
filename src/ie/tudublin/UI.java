@@ -52,7 +52,7 @@ public class UI extends PApplet
 
 		for(TableRow row1 : table2.rows())
 		{
-			resistors.add(new Resistor(row1));
+				resistors.add(new Resistor(row1));		
 		}
 	}
 
@@ -62,6 +62,11 @@ public class UI extends PApplet
 		{
 			System.out.println(colours);
 		}
+
+		for(int i = 0 ; i < resistors.size() ; i ++)
+		{
+			System.out.println(resistors);
+		}
 	}
 
 	public void setup() 
@@ -70,10 +75,44 @@ public class UI extends PApplet
 	
 	public void draw()
 	{			
+		// Drawing numbers on right;
+
+		stroke(0);
+		int yDis = 150;
+		int con = 100;
+
+		for(int k = 0 ; k < resistors.size() ; k ++)
+		{
+			text(resistors(k), 300, yDis);
+			yDis = yDis + con;
+		}
+
+
+		// Resistors
+		Resistor R1 = new Resistor(100, 200, 5, 50);
+		R1.render();
+
+		Resistor R2 = new Resistor(100, 350, 5, 50);
+		R2.render();
+
+		Resistor R3 = new Resistor(100, 500, 5, 50);
+		R3.render();
+		
+		Resistor R4 = new Resistor(10, 650, 5, 50);
+		R4.render();
+
+
+	}
+
+	private String resistors(int k) {
+		return null;
 	}
 
 	/*public Colour findColour(int value)
 	{
-		
+		Colour result;
+
+
+		return result;
 	}*/
 }
